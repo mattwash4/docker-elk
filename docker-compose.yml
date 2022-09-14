@@ -32,8 +32,8 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./elasticsearch/config/elasticsearch.yml:/elasticsearch/config/elasticsearch.yml
-      - elasticsearch:/elasticsearch/data
+      - ./elasticsearch/config/:/usr/share/elasticsearch/config/
+      - elasticsearch:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -55,7 +55,7 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/config/:/usr/share/logstash/config/
       - ./logstash/pipeline:/usr/share/logstash/pipeline
     ports:
       - "5044:5044"
@@ -76,7 +76,7 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ./kibana/config/:/usr/share/kibana/config/
     ports:
       - "5601:5601"
     environment:
