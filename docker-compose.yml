@@ -32,8 +32,8 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./elasticsearch/config/:/usr/share/elasticsearch/config/
-      - elasticsearch:/usr/share/elasticsearch/data
+      - ./elasticsearch/config/:/home/matt/Docker/docker-elk/elasticsearch/config/
+      - elasticsearch:/home/matt/Docker/docker-elk/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
